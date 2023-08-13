@@ -19,11 +19,16 @@ public class UserDatabase {
 				new User(104, "Katy", "katy@gmail.com", "active"),
 				new User(105, "Justin", "justin@gmail.com", "active"))
 				.collect(Collectors.toList());
+		//Stream.of: creates a stream of objects using the provided arguments. In this case, it creates a stream of User 
+		//Collectors.toList(): used to accumulate the elements of the stream into a List
+		
 	}
 	
 	public long getUserStatusCountByStatus(String status) {
 		return getAllUsers().stream().filter(user -> user.getStatus().equals(status)).count();
-		
+		//takes a status parameter, retrieves a list of User objects, 
+		//filters the list to include only users with the specified status, 
+		//and then counts the number of users in that filtered list. 
 	}
 
 }
